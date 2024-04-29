@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="main_f" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookshop.HelloController">
+    <children>
+        <AnchorPane fx:id="main_form" prefHeight="720.0" prefWidth="1280.0" styleClass="loginmenu" stylesheets="@design.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="500.0" layoutY="123.0" text="Log in">
+                    <font>
+                        <Font name="Berlin Sans FB" size="110.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="username" focusTraversable="false" layoutX="369.0" layoutY="265.0" prefHeight="82.0" prefWidth="542.0" promptText="Username" styleClass="textfield" stylesheets="@design.css">
+                    <font>
+                        <Font name="Arial" size="30.0" />
+                    </font>
+                </TextField>
+            <PasswordField fx:id="password" focusTraversable="false" layoutX="369.0" layoutY="392.0" prefHeight="82.0" prefWidth="542.0" promptText="Password" styleClass="textfield" stylesheets="@design.css">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </PasswordField>
+                <Button fx:id="loginBtn" layoutX="370.0" layoutY="512.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="62.0" prefWidth="540.0" styleClass="loginbutton" stylesheets="@design.css" text="Log in" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Button>
+            <Button fx:id="close" layoutX="1228.0" layoutY="14.0" mnemonicParsing="false" onAction="#close" prefHeight="32.0" prefWidth="37.0" styleClass="exitbutton" stylesheets="@design.css">
+               <graphic>
+                  <FontAwesomeIconView fill="#8ab7e2" glyphName="POWER_OFF" size="22" wrappingWidth="13.180840492248535" />
+               </graphic>
+            </Button>
+            <Button fx:id="minimize" focusTraversable="false" layoutX="1200.0" layoutY="15.0" mnemonicParsing="false" onAction="#minimize" styleClass="exitbutton" stylesheets="@dashboardDesign.css">
+               <graphic>
+                  <FontAwesomeIconView fill="#8ab7e2" glyphName="MINUS" size="18" />
+               </graphic>
+            </Button>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

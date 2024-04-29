@@ -1,0 +1,37 @@
+.loginmenu{
+    -fx-background-image: url('login_bg.png');
+}
+
+.textfield{
+    -fx-background-radius:30px;
+}
+
+.loginbutton{
+    -fx-background-color:#8ab7e2;
+    -fx-background-radius:30px;
+    -fx-text-fill:#ffff;
+}
+
+.loginbutton:hover{
+    -fx-background-color:#ffff;
+    -fx-text-fill:#8ab7e2;
+    -fx-border-color:#8ab7e2;
+    -fx-border-width: 2px;
+    -fx-border-radius:30px;
+}
+
+.exitbutton{
+    -fx-background-color: transparent;
+    -fx-text-fill: #8AB7E2;
+    -fx-font-size: 16px;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-cursor: hand;
+}
+.exitbutton:hover{
+    -fx-scale-x: 1.2;
+    -fx-scale-y: 1.2;
+}
+
+

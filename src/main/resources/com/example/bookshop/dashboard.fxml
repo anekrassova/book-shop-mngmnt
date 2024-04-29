@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="main-form" stylesheets="@dashboardDesign.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bookshop.DashboardController">
+   <children>
+      <AnchorPane fx:id="main_form" layoutX="206.0" layoutY="14.0" prefHeight="694.0" prefWidth="1060.0" styleClass="upper-form" stylesheets="@dashboardDesign.css">
+         <children>
+            <Pane fx:id="dashboard_form" layoutX="15.0" layoutY="44.0" prefHeight="645.0" prefWidth="1030.0" stylesheets="@dashboardDesign.css" visible="false">
+               <styleClass>
+                  <String fx:value="rounded-pane" />
+                  <String fx:value="shadow" />
+               </styleClass>
+               <children>
+                  <AnchorPane layoutX="33.0" layoutY="206.0" prefHeight="169.0" prefWidth="296.0" styleClass="rounded-blocks" stylesheets="@dashboardDesign.css">
+                     <children>
+                        <Label layoutX="96.0" layoutY="127.0" text="Total sales" textFill="WHITE">
+                           <font>
+                              <Font name="CentSchbkCyrill BT Roman" size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="WHITE" glyphName="INBOX" layoutX="31.0" layoutY="98.0" size="75" />
+                        <Label fx:id="dashboard_TC" layoutX="256.0" layoutY="20.0" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="CentSchbkCyrill BT Roman" size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="27.0" layoutY="30.0" prefHeight="70.0" prefWidth="290.0" text="Welcome back, " textAlignment="CENTER" textFill="#577691" wrapText="true">
+                     <font>
+                        <Font name="CentSchbkCyrill BT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dashboard_username" layoutX="225.0" layoutY="30.0" prefHeight="70.0" prefWidth="290.0" textAlignment="CENTER" textFill="#577691" wrapText="true">
+                     <font>
+                        <Font name="CentSchbkCyrill BT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="91.0" prefHeight="70.0" prefWidth="379.0" text="Statistical overview of sales:" textAlignment="CENTER" textFill="#577691" wrapText="true">
+                     <font>
+                        <Font name="CentSchbkCyrill BT Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="33.0" layoutY="416.0" prefHeight="169.0" prefWidth="296.0" styleClass="rounded-blocks" stylesheets="@dashboardDesign.css">
+                     <children>
+                        <Label layoutX="52.0" layoutY="127.0" text="Sold books amount" textFill="WHITE">
+                           <font>
+                              <Font name="CentSchbkCyrill BT Roman" size="22.0" />
+                           </font>
+                        </Label>
+                        <FontAwesomeIconView fill="WHITE" glyphName="TH" layoutX="35.0" layoutY="92.0" size="75" />
+                        <Label fx:id="dashboard_SB" layoutX="255.0" layoutY="21.0" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="CentSchbkCyrill BT Roman" size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <TableView fx:id="dashoard_table_view" focusTraversable="false" layoutX="428.0" layoutY="206.0" prefHeight="332.0" prefWidth="540.0">
+                    <columns>
+                      <TableColumn fx:id="dashboard_sale_id" prefWidth="270.0" text="Sale ID" />
+                      <TableColumn fx:id="dashboard_amount_sale" prefWidth="270.0" resizable="false" text="The amount of the sale" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="428.0" layoutY="558.0" text="Total income:" textFill="#577691">
+                     <font>
+                        <Font name="CentSchbkCyrill BT Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dashboard_TI" layoutX="861.0" layoutY="558.0" text="0.0" textFill="#577691">
+                     <font>
+                        <Font name="CentSchbkCyrill BT Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <AnchorPane fx:id="availableBook_form" layoutX="15.0" layoutY="44.0" prefHeight="645.0" prefWidth="1030.0" visible="false">
+               <children>
+                  <Pane layoutX="7.0" layoutY="-2.0" prefHeight="626.0" prefWidth="314.0" stylesheets="@dashboardDesign.css">
+                     <styleClass>
+                        <String fx:value="rounded-pane" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <Label layoutX="35.0" layoutY="108.0" text="Book ID" />
+                        <TextField fx:id="availableBook_bookID" focusTraversable="false" layoutX="118.0" layoutY="104.0" prefHeight="25.0" prefWidth="162.0" />
+                        <TextField fx:id="availableBook_bookTitle" focusTraversable="false" layoutX="118.0" layoutY="144.0" prefHeight="25.0" prefWidth="162.0" />
+                        <TextField fx:id="availableBook_author" focusTraversable="false" layoutX="118.0" layoutY="188.0" prefHeight="25.0" prefWidth="162.0" />
+                        <Label layoutX="35.0" layoutY="148.0" text="Book Title" />
+                        <Label layoutX="35.0" layoutY="192.0" text="Author" />
+                        <TextField fx:id="availableBook_genre" focusTraversable="false" layoutX="118.0" layoutY="230.0" prefHeight="25.0" prefWidth="162.0" />
+                        <Label layoutX="35.0" layoutY="234.0" text="Genre" />
+                        <TextField fx:id="availableBook_price" focusTraversable="false" layoutX="118.0" layoutY="270.0" prefHeight="25.0" prefWidth="162.0" />
+                        <Label layoutX="35.0" layoutY="274.0" text="Price" />
+                        <Button fx:id="availableBook_addBtn" layoutX="55.0" layoutY="331.0" mnemonicParsing="false" onAction="#availableBooksAdd" prefHeight="38.0" prefWidth="86.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Add" />
+                        <Button fx:id="availableBook_updateBtn" layoutX="177.0" layoutY="331.0" mnemonicParsing="false" onAction="#availableBooksUpdate" prefHeight="38.0" prefWidth="86.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Update" />
+                        <Button fx:id="availableBook_clearBtn" layoutX="55.0" layoutY="387.0" mnemonicParsing="false" onAction="#availableBooksClear" prefHeight="38.0" prefWidth="86.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Clear" />
+                        <Button fx:id="availableBook_deleteBtn" layoutX="177.0" layoutY="387.0" mnemonicParsing="false" onAction="#availableBooksDelete" prefHeight="38.0" prefWidth="86.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Delete" />
+                        <Label layoutX="1.0" layoutY="14.0" prefHeight="70.0" prefWidth="312.0" text="ADD / UPDATE / DELETE PANEL" textAlignment="CENTER" textFill="#799ebf" wrapText="true">
+                           <font>
+                              <Font name="CentSchbkCyrill BT Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="12.0" layoutY="453.0" prefHeight="70.0" prefWidth="290.0" text="CREATE BACKUP OF DATA" textAlignment="CENTER" textFill="#799ebf" wrapText="true">
+                           <font>
+                              <Font name="CentSchbkCyrill BT Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="availableBook_createBackUp" layoutX="94.0" layoutY="539.0" mnemonicParsing="false" onAction="#createBackup" prefHeight="38.0" prefWidth="127.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Create backup" />
+                     </children>
+                  </Pane>
+                  <Pane layoutX="332.0" layoutY="-2.0" prefHeight="626.0" prefWidth="703.0" stylesheets="@dashboardDesign.css">
+                     <styleClass>
+                        <String fx:value="rounded-pane" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <TableView fx:id="availableBook_tableView" layoutX="14.0" layoutY="52.0" prefHeight="566.0" prefWidth="681.0" stylesheets="@dashboardDesign.css">
+                          <columns>
+                            <TableColumn fx:id="availableBook_col_bookID" prefWidth="77.60003662109375" styleClass="ta" text="Book ID" />
+                            <TableColumn fx:id="availableBook_col_bookTitle" prefWidth="168.0" styleClass="ta" text="Book Title" />
+                              <TableColumn fx:id="availableBook_col_author" prefWidth="181.60003662109375" styleClass="ta" text="Author" />
+                              <TableColumn fx:id="availableBook_col_genre" prefWidth="154.39996337890625" styleClass="ta" text="Genre" />
+                              <TableColumn fx:id="availableBook_col_price" prefWidth="96.7999267578125" styleClass="ta" text="Price" />
+                          </columns>
+                        </TableView>
+                        <AnchorPane layoutX="13.0" layoutY="10.0" prefHeight="30.0" prefWidth="389.0" stylesheets="@dashboardDesign.css">
+                           <children>
+                              <FontAwesomeIconView fill="#999999" glyphName="SEARCH" layoutX="19.0" layoutY="19.0" size="14" wrappingWidth="12.399987792968659">
+                                 <selectionFill>
+                                    <LinearGradient endX="1.0" endY="1.0">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="1.0" green="1.0" blue="1.0" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </LinearGradient>
+                                 </selectionFill>
+                              </FontAwesomeIconView>
+                              <TextField fx:id="availableBook_search" layoutX="28.0" layoutY="1.0" onAction="#availableBooksSearch" prefHeight="30.0" prefWidth="361.0" promptText="Search..." style="-fx-background-color: transparent;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                           <styleClass>
+                              <String fx:value="rounded-pane" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                        </AnchorPane>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="purchase_form" layoutX="15.0" layoutY="44.0" prefHeight="696.0" prefWidth="1078.4" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane layoutX="17.0" layoutY="51.0" prefHeight="626.0" prefWidth="1042.0" stylesheets="@dashboardDesign.css">
+                     <styleClass>
+                        <String fx:value="rounded-pane" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <AnchorPane prefHeight="257.0" prefWidth="1042.0" stylesheets="@dashboardDesign.css" AnchorPane.bottomAnchor="401.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <styleClass>
+                              <String fx:value="rounded-pane" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <Label layoutX="38.0" layoutY="81.0" text="Quantity">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="purchase_bookQuantity" focusTraversable="false" layoutX="126.0" layoutY="81.0" prefWidth="150.0" promptText="Choose..." />
+                              <Label layoutX="38.0" layoutY="39.0" text="Book Title">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="purchase_bookTitle" focusTraversable="false" layoutX="126.0" layoutY="39.0" prefWidth="150.0" promptText="Choose..." />
+                              <Label layoutX="38.0" layoutY="136.0" text="Purchase Total:">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="purchase_tottal" layoutX="155.0" layoutY="135.0" prefHeight="26.0" prefWidth="92.0" text="₸0.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="purchase_addBtn" layoutX="64.0" layoutY="200.0" mnemonicParsing="false" onAction="#addBookToOrder" prefHeight="26.0" prefWidth="86.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Add" />
+                              <AnchorPane layoutX="507.0" layoutY="-1.0" prefHeight="238.0" prefWidth="535.0" styleClass="info" stylesheets="@dashboardDesign.css">
+                                 <children>
+                                    <Label layoutX="22.0" layoutY="25.0" text="Book ID:" textFill="WHITE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="purchase_info_Book_ID" layoutX="106.0" layoutY="24.0" prefHeight="26.0" prefWidth="236.0" styleClass="info-label" stylesheets="@dashboardDesign.css">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="22.0" layoutY="66.0" text="Book Title" textFill="WHITE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="purchase_info_Book_Title" layoutX="106.0" layoutY="65.0" prefHeight="26.0" prefWidth="236.0" styleClass="info-label" stylesheets="@dashboardDesign.css">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="22.0" layoutY="107.0" text="Author" textFill="WHITE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="purchase_info_author" layoutX="106.0" layoutY="106.0" prefHeight="26.0" prefWidth="236.0" styleClass="info-label" stylesheets="@dashboardDesign.css">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="22.0" layoutY="147.0" text="Genre" textFill="WHITE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="purchase_info_genre" layoutX="106.0" layoutY="146.0" prefHeight="26.0" prefWidth="236.0" styleClass="info-label" stylesheets="@dashboardDesign.css">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="22.0" layoutY="186.0" text="Price" textFill="WHITE">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="purchase_info_price" layoutX="106.0" layoutY="185.0" prefHeight="26.0" prefWidth="236.0" styleClass="info-label" stylesheets="@dashboardDesign.css">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Button fx:id="purchase_payBtn" layoutX="173.0" layoutY="200.0" mnemonicParsing="false" onAction="#finalizeOrder" prefHeight="31.0" prefWidth="86.0" styleClass="add-btn" stylesheets="@dashboardDesign.css" text="Confirm" />
+                           </children>
+                        </AnchorPane>
+                        <TableView fx:id="purchase_tableView" layoutX="12.0" layoutY="300.0" prefHeight="332.0" prefWidth="1018.0">
+                          <columns>
+                            <TableColumn fx:id="purchase_col_bookID" prefWidth="72.00001525878906" text="Book ID" />
+                            <TableColumn fx:id="purchase_col_bookTitle" prefWidth="210.39996337890625" text="Book Title" />
+                              <TableColumn fx:id="purchase_col_author" prefWidth="213.60003662109375" text="Author" />
+                              <TableColumn fx:id="purchase_col_genre" prefWidth="146.4000244140625" text="Genre" />
+                              <TableColumn fx:id="purchase_col_price" prefWidth="131.20001220703125" text="Book Price" />
+                              <TableColumn fx:id="purchase_col_quantity" prefWidth="130.39996337890625" text="Quantity" />
+                              <TableColumn fx:id="purchase_col_total_price" prefWidth="109.5999755859375" text="Total Price" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="10.0" layoutY="255.0" prefHeight="38.0" prefWidth="290.0" text="Books in order:" textAlignment="CENTER" textFill="#799ebf" wrapText="true">
+                           <font>
+                              <Font name="CentSchbkCyrill BT Bold" size="25.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="chat_form" layoutX="15.0" layoutY="44.0" prefHeight="638.0" prefWidth="1042.0" stylesheets="@dashboardDesign.css" visible="false">
+               <styleClass>
+                  <String fx:value="rounded-pane" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+            <Button fx:id="close" focusTraversable="false" layoutX="1035.0" layoutY="8.0" mnemonicParsing="false" onAction="#close" styleClass="exitbutton" stylesheets="@dashboardDesign.css">
+               <graphic>
+                  <FontAwesomeIconView fill="#8ab7e2" glyphName="POWER_OFF" />
+               </graphic></Button>
+            <Button fx:id="minimize" focusTraversable="false" layoutX="1007.0" layoutY="8.0" mnemonicParsing="false" onAction="#minimize" styleClass="exitbutton" stylesheets="@dashboardDesign.css">
+               <graphic>
+                  <FontAwesomeIconView fill="#8ab7e2" glyphName="MINUS" />
+               </graphic></Button>
+         </children>
+      </AnchorPane>
+      <Button fx:id="dashboard_btn" layoutX="8.0" layoutY="243.0" mnemonicParsing="false" onAction="#switchFrom" prefHeight="38.0" prefWidth="172.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="  Statistics">
+         <font>
+            <Font name="Californian FB" size="14.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="EYE" size="20" wrappingWidth="17.600000000000136">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </FontAwesomeIconView>
+         </graphic>
+      </Button>
+      <Button fx:id="availableBooks_btn" layoutX="8.0" layoutY="283.0" mnemonicParsing="false" onAction="#switchFrom" prefHeight="38.0" prefWidth="172.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="  Books in Shop">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="BOOK" size="20" />
+         </graphic></Button>
+      <Button fx:id="purchase_btn" layoutX="8.0" layoutY="323.0" mnemonicParsing="false" onAction="#switchFrom" prefHeight="38.0" prefWidth="172.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="  Close purchase">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" size="20" text="" />
+         </graphic></Button>
+      <Button fx:id="logout" layoutX="14.0" layoutY="686.0" mnemonicParsing="false" onAction="#logout" styleClass="sign-out" stylesheets="@dashboardDesign.css" text="SIGN OUT">
+         <font>
+            <Font size="11.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SIGN_OUT" size="15" />
+         </graphic>
+      </Button>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="38.0" prefWidth="172.0" text="Shop Management" textFill="WHITE">
+         <font>
+            <Font name="CentSchbkCyrill BT Italic" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="180.0" fitWidth="180.0" layoutX="14.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@bookLogo.png" />
+         </image>
+      </ImageView>
+      <Line endX="85.19998168945312" endY="6.133331298828125" layoutX="108.0" layoutY="232.0" startX="-97.20001983642578" startY="6.133331298828125" stroke="WHITE" />
+      <Button fx:id="chat_btn" layoutX="8.0" layoutY="363.0" mnemonicParsing="false" onAction="#switchFrom" prefHeight="38.0" prefWidth="172.0" styleClass="nav-btn" stylesheets="@dashboardDesign.css" text="  Chat">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="COMMENTS" size="20.0" />
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
